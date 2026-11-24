@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', $produk->exists ? 'Ubah Produk' : 'Tambah Produk')
 @section('content')
 <div class="row">
@@ -16,14 +16,20 @@
                value="{{ old('jenis_melon', $produk->jenis_melon) }}" required>
       </div>
       <div class="mb-3">
-        <label class="form-label">Harga (Rp)</label>
+        <label class="form-label">Harga per buah (Rp)</label>
         <input type="number" name="harga_produk" class="form-control" min="0" step="1000"
                value="{{ old('harga_produk', $produk->exists ? (int) $produk->harga_produk : '') }}" required>
       </div>
       <div class="mb-3">
-        <label class="form-label">Stok</label>
+        <label class="form-label">Stok (buah)</label>
         <input type="number" name="stok_jenis" class="form-control" min="0" step="1"
                value="{{ old('stok_jenis', $produk->stok_jenis) }}" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Deskripsi</label>
+        <textarea name="deskripsi_produk" rows="3" maxlength="500" class="form-control"
+                  placeholder="Contoh: Daging hijau • Manis lembut • Harum • Estimasi 1,4–1,8 kg per buah">{{ old('deskripsi_produk', $produk->deskripsi_produk) }}</textarea>
+        <div class="form-text">Opsional. Tulis rasa, tekstur, dan estimasi berat dalam satu teks (maksimal 500 karakter).</div>
       </div>
       <div class="mb-3">
         <label class="form-label">Gambar Melon</label>

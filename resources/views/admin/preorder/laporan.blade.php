@@ -46,7 +46,7 @@
         <th style="width:80px">Tanggal</th>
         <th style="width:120px">Pemesan</th>
         <th>Rincian Pesanan</th>
-        <th class="tengah" style="width:45px">Item</th>
+        <th class="tengah" style="width:45px">buah</th>
         <th class="kanan" style="width:80px">Total Harga</th>
         <th style="width:70px">Status</th>
       </tr>
@@ -77,9 +77,9 @@
   <table class="ringkas">
     <tr><th colspan="2">Ringkasan</th></tr>
     <tr><td>Jumlah pesanan</td><td class="kanan">{{ $ringkasan['jumlah_pesanan'] }}</td></tr>
-    <tr><td>Total item</td><td class="kanan">{{ $ringkasan['total_item'] }}</td></tr>
+    <tr><td>Total buah</td><td class="kanan">{{ $ringkasan['total_item'] }}</td></tr>
     <tr><td>Total nilai pesanan</td><td class="kanan">Rp {{ number_format($ringkasan['total_harga'], 0, ',', '.') }}</td></tr>
   </table>
-  <p class="kecil">Total item dan total nilai tidak termasuk pesanan berstatus dibatalkan.</p>
+  <p class="kecil">Total buah dan total nilai tidak termasuk pesanan berstatus dibatalkan.</p>
 </body>
 </html>

@@ -1,0 +1,168 @@
+:root {
+  --pf-hijau: #2F7D4B;
+  --pf-hijau-tua: #1E5A38;
+  --pf-hijau-muda: #E8F3EA;
+  --pf-krem: #FBF8F1;
+  --pf-emas: #F2A93B;
+  --pf-emas-tua: #D98E1F;
+  --pf-teks: #22312A;
+
+  --bs-success: #2F7D4B;
+  --bs-success-rgb: 47, 125, 75;
+  --bs-primary: #1E5A38;
+  --bs-primary-rgb: 30, 90, 56;
+  --bs-link-color-rgb: 30, 90, 56;
+  --bs-link-hover-color-rgb: 47, 125, 75;
+  --bs-body-font-family: 'Poppins', system-ui, sans-serif;
+  --bs-body-color: #22312A;
+  --bs-body-bg: #FBF8F1;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+
+h1, h2, h3, h4, .font-judul {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: var(--pf-hijau-tua);
+}
+
+/* Tombol */
+.btn-success {
+  --bs-btn-bg: var(--pf-hijau); --bs-btn-border-color: var(--pf-hijau);
+  --bs-btn-hover-bg: var(--pf-hijau-tua); --bs-btn-hover-border-color: var(--pf-hijau-tua);
+  --bs-btn-active-bg: var(--pf-hijau-tua); --bs-btn-active-border-color: var(--pf-hijau-tua);
+  --bs-btn-disabled-bg: var(--pf-hijau); --bs-btn-disabled-border-color: var(--pf-hijau);
+}
+.btn-primary {
+  --bs-btn-bg: var(--pf-hijau-tua); --bs-btn-border-color: var(--pf-hijau-tua);
+  --bs-btn-hover-bg: var(--pf-hijau); --bs-btn-hover-border-color: var(--pf-hijau);
+  --bs-btn-active-bg: var(--pf-hijau); --bs-btn-active-border-color: var(--pf-hijau);
+}
+.btn-outline-success {
+  --bs-btn-color: var(--pf-hijau); --bs-btn-border-color: var(--pf-hijau);
+  --bs-btn-hover-bg: var(--pf-hijau); --bs-btn-hover-border-color: var(--pf-hijau);
+  --bs-btn-active-bg: var(--pf-hijau); --bs-btn-active-border-color: var(--pf-hijau);
+}
+.btn-emas {
+  --bs-btn-color: #2b1d00; --bs-btn-bg: var(--pf-emas); --bs-btn-border-color: var(--pf-emas);
+  --bs-btn-hover-color: #2b1d00; --bs-btn-hover-bg: var(--pf-emas-tua); --bs-btn-hover-border-color: var(--pf-emas-tua);
+  --bs-btn-active-bg: var(--pf-emas-tua); --bs-btn-active-border-color: var(--pf-emas-tua);
+  font-weight: 600;
+}
+
+/* Form dan kartu */
+.form-control:focus, .form-select:focus {
+  border-color: var(--pf-hijau);
+  box-shadow: 0 0 0 .2rem rgba(47, 125, 75, .2);
+}
+.card { border: 1px solid rgba(30, 90, 56, .12); border-radius: .9rem; }
+.card-img-top { border-radius: .9rem .9rem 0 0; }
+.table-light { --bs-table-bg: var(--pf-hijau-muda); }
+
+/* Navbar */
+.navbar .nav-link { color: var(--pf-teks); font-weight: 500; }
+.navbar .nav-link:hover, .navbar .nav-link.active { color: var(--pf-hijau); }
+.logo-placeholder {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--pf-hijau); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: .9rem;
+}
+
+/* Footer */
+.footer-pf { background: var(--pf-hijau-tua); color: #e6f1e9; }
+.footer-pf a { color: #fff; text-decoration: none; }
+.footer-pf a:hover { color: var(--pf-emas); }
+.footer-pf .judul { font-family: 'Playfair Display', Georgia, serif; color: #fff; }
+
+/* ===== Fase 2: beranda ===== */
+.bagian { padding: 4.5rem 0; }
+.bagian-putih { background: #fff; }
+.judul-bagian { text-align: center; margin-bottom: 2.5rem; }
+.judul-bagian h2 { font-size: 2rem; }
+.judul-bagian p { color: #5b6b62; max-width: 640px; margin: .5rem auto 0; }
+
+.hero { background: linear-gradient(180deg, var(--pf-hijau-muda) 0%, var(--pf-krem) 100%); padding: 3.5rem 0 4.5rem; }
+.hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.15; }
+.hero .lead { color: #44554b; }
+
+.foto-bulat { border-radius: 1.5rem; overflow: hidden; box-shadow: 0 18px 40px rgba(30, 90, 56, .18); }
+.foto-bulat img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rasio-hero { aspect-ratio: 4 / 3; }
+.rasio-kartu { aspect-ratio: 4 / 3; }
+.placeholder-foto {
+  background: repeating-linear-gradient(45deg, #e9efe9, #e9efe9 12px, #f1f5f1 12px, #f1f5f1 24px);
+  color: #6b7d72; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; padding: 1rem;
+}
+
+.kartu-keunggulan { text-align: center; padding: 1.5rem 1rem; height: 100%; }
+.ikon-bulat {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--pf-hijau-muda); color: var(--pf-hijau);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.7rem; margin-bottom: 1rem;
+}
+
+.langkah { position: relative; text-align: center; padding: 0 .75rem; }
+.langkah .nomor {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--pf-hijau); color: #fff; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem; position: relative; z-index: 1;
+}
+@media (min-width: 992px) {
+  .langkah:not(:last-child)::after {
+    content: ''; position: absolute; top: 28px; left: calc(50% + 40px);
+    width: calc(100% - 80px); border-top: 2px dashed var(--pf-hijau); opacity: .5;
+  }
+}
+
+.banner-kuota { background: #FFF4D6; border: 1px solid #F2D58A; border-radius: 1rem; padding: 1rem 1.25rem; }
+.kartu-produk { transition: transform .2s ease, box-shadow .2s ease; overflow: hidden; }
+.kartu-produk:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(30, 90, 56, .14); }
+.kartu-produk .gambar { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.harga-uang-muka { font-size: 1.25rem; font-weight: 700; color: var(--pf-hijau-tua); }
+
+.banner-notifikasi {
+  background: linear-gradient(135deg, var(--pf-hijau-tua), var(--pf-hijau));
+  color: #fff; border-radius: 1.5rem; padding: 2.5rem 1.5rem;
+}
+.banner-notifikasi h2 { color: #fff; }
+
+.accordion-button:not(.collapsed) { background: var(--pf-hijau-muda); color: var(--pf-hijau-tua); }
+.accordion-button:focus { box-shadow: 0 0 0 .2rem rgba(47, 125, 75, .2); }
+
+.peta { border: 0; width: 100%; min-height: 320px; border-radius: 1rem; }
+
+/* ===== Fase 3: halaman pendukung ===== */
+.panel-auth {
+  background: linear-gradient(160deg, var(--pf-hijau-tua), var(--pf-hijau));
+  color: #fff;
+}
+.panel-auth h3 { color: #fff; }
+
+/* ===== Fase 4: admin ===== */
+.admin-wrap { min-height: 100vh; }
+.min-w-0 { min-width: 0; }
+
+.admin-sidebar .offcanvas-header,
+.admin-sidebar .offcanvas-body { background: var(--pf-hijau-tua); color: #e6f1e9; }
+.admin-sidebar .brand-admin { text-decoration: none; }
+.admin-sidebar .nav-link {
+  color: #d5e8da; border-radius: .6rem; padding: .6rem .9rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.admin-sidebar .nav-link:hover,
+.admin-sidebar .nav-link.active { background: rgba(255, 255, 255, .14); color: #fff; }
+
+@media (min-width: 992px) {
+  .admin-sidebar {
+    flex: 0 0 260px !important; width: 260px !important;
+    position: sticky !important; top: 0; height: 100vh !important;
+  }
+}
+
+.admin-topbar { background: var(--pf-hijau-tua); color: #fff; }
+.kartu-statistik .angka { font-size: 1.8rem; font-weight: 700; color: var(--pf-hijau-tua); line-height: 1; }

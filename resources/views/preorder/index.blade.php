@@ -18,7 +18,7 @@
     <div class="card-body">
       <div class="table-responsive">
         <table class="table table-sm mb-2">
-          <thead><tr><th>Produk</th><th>Jumlah</th><th>Harga Satuan</th><th>Subtotal</th></tr></thead>
+          <thead><tr><th>Produk</th><th>Jumlah (buah)</th><th>Harga / buah</th><th>Subtotal</th></tr></thead>
           <tbody>
           @foreach($o->detail as $d)
             <tr>
@@ -32,7 +32,7 @@
         </table>
       </div>
 
-      <p class="mb-3">Total ({{ $o->total_jumlah_produk }} item):
+      <p class="mb-3">Total ({{ $o->total_jumlah_produk }} buah):
         <strong>Rp {{ number_format($o->total_harga, 0, ',', '.') }}</strong></p>
 
       @if($o->bukti_pembayaran)

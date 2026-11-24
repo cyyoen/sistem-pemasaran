@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', 'Kelola Produk')
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-3">
@@ -10,7 +10,7 @@
   <table class="table table-bordered align-middle">
     <thead class="table-light">
       <tr>
-        <th>No</th><th>Gambar</th><th>Jenis Melon</th><th>Harga</th><th>Stok</th>
+        <th>No</th><th>Gambar</th><th>Jenis Melon</th><th>Harga / buah</th><th>Stok (buah)</th>
         <th style="width:170px">Aksi</th>
       </tr>
     </thead>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', $jadwal->exists ? 'Ubah Jadwal Panen' : 'Tambah Jadwal Panen')
 @section('content')
 <div class="row">

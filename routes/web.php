@@ -13,7 +13,7 @@ use App\Http\Controllers\Admin\PreOrderAdminController;
 
 // ===== Publik (Pengunjung, tanpa login) =====
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
-Route::get('/produk', [BerandaController::class, 'produk'])->name('produk.publik');
+Route::get('/produk', fn () => redirect(route('beranda') . '#katalog'))->name('produk.publik');
 Route::redirect('/jadwal-panen', '/');
 // ===== Login dan registrasi (hanya untuk yang belum login) =====
 Route::middleware('guest:web,admin')->group(function () {

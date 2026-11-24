@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', 'Data Pre-order')
 @section('content')
 <h3 class="mb-3">Data Pre-order</h3>
@@ -31,7 +31,7 @@
     <thead class="table-light">
       <tr>
         <th>ID</th><th>Tanggal</th><th>Pemesan</th><th>Rincian</th>
-        <th>Total</th><th>Bukti</th><th style="min-width:210px">Status</th>
+        <th>Total Uang Muka</th><th>Bukti</th><th style="min-width:210px">Status</th>
       </tr>
     </thead>
     <tbody>
@@ -45,11 +45,11 @@
         <td>{{ $o->pengguna->nama_pengguna }}<br><small class="text-muted">{{ $o->pengguna->no_telepon }}</small></td>
         <td>
           @foreach($o->detail as $d)
-            {{ $d->produk->jenis_melon }} &times; {{ $d->jumlah_produk }}<br>
+            {{ $d->produk->jenis_melon }} &times; {{ $d->jumlah_produk }} buah<br>
           @endforeach
         </td>
         <td>Rp {{ number_format($o->total_harga, 0, ',', '.') }}<br>
-            <small class="text-muted">{{ $o->total_jumlah_produk }} item</small></td>
+            <small class="text-muted">{{ $o->total_jumlah_produk }} buah</small></td>
         <td>
           @if($o->bukti_pembayaran)
             <a href="{{ asset('storage/'.$o->bukti_pembayaran) }}" target="_blank">Lihat bukti</a>
@@ -61,10 +61,10 @@
           <span class="badge bg-{{ $warna }} mb-2">{{ ucfirst($o->status_pesanan) }}</span>
 
           @if($o->status_pesanan !== 'dibatalkan')
-            <<form method="POST" action="{{ route('admin.preorder.status', $o->id_preorder) }}" class="d-flex gap-1"
-                data-id="{{ $o->id_preorder }}" data-status="{{ $o->status_pesanan }}"
-                onsubmit="return konfirmasiStatus(this)">
-                @csrf
+            <form method="POST" action="{{ route('admin.preorder.status', $o->id_preorder) }}" class="d-flex gap-1"
+                  data-id="{{ $o->id_preorder }}" data-status="{{ $o->status_pesanan }}"
+                  onsubmit="return konfirmasiStatus(this)">
+              @csrf
               @method('PATCH')
               <select name="status_pesanan" class="form-select form-select-sm">
                 @foreach(['menunggu', 'dikonfirmasi', 'selesai', 'dibatalkan'] as $s)

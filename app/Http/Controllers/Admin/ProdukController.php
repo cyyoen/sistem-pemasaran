@@ -10,13 +10,14 @@ use Illuminate\Support\Facades\Storage;
 
 class ProdukController extends Controller
 {
-    private function rules(): array
+   private function rules(): array
     {
         return [
-            'jenis_melon'   => 'required|string|max:50',
-            'harga_produk'  => 'required|numeric|min:0',
-            'stok_jenis'    => 'required|integer|min:0',
-            'gambar_produk' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120',
+            'jenis_melon'      => 'required|string|max:50',
+            'harga_produk'     => 'required|numeric|min:0',
+            'stok_jenis'       => 'required|integer|min:0',
+            'gambar_produk'    => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'deskripsi_produk' => 'nullable|string|max:500',
         ];
     }
 
